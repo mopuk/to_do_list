@@ -1,0 +1,90 @@
+
+.adding {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(66, 66, 66, 0.659);
+}
+
+.addTask {
+
+    width: 40vw;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(76, 76, 76);
+
+    border-radius: 20px;
+
+    padding: 0.5em;
+
+    position: absolute;
+    top: 25%;
+    left: 30%;
+
+}
+
+.inputTitle {
+
+    border: none;
+    border-bottom: 1px solid white;
+    
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin: 0.25em;
+
+    z-index: 1;
+    
+    background-color: rgba(0, 0, 0, 0);
+
+    color:rgb(231, 231, 231);
+
+    transition: all 0s;
+}
+
+.inputTitle:focus {
+    outline: none;
+}
+
+.textArea {
+    border: none;
+    border-radius: 10px;
+
+    outline: none;
+    
+    height: 70%;
+
+    padding: 1em;
+    
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(231, 231, 231);
+
+    white-space: pre-wrap;
+    resize: none;
+}
+
+.addButton {
+    
+    border: none;
+    border-radius: 50%;
+
+    background-color:rgba(73, 73, 73, 0);
+    color: rgb(231, 231, 231);
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1;
+    margin: 0.25em;
+
+    transition: background-color 0.2s;
+}
+
+.addButton:hover {
+    background-color: rgb(108, 108, 108);
+}
