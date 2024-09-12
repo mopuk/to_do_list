@@ -1,5 +1,6 @@
 
 import Task from "./components/Task";
+import Tasks from "./components/Tasks";
 import list from "./data/list";
 
 import { useState } from 'react';
@@ -9,32 +10,42 @@ import styles from './App.module.css';
 
 function App() {
 
-    const [state, setState] = useState('');
     const [id, setId] = useState(1);
-    const [editingId, setEditingId] = useState(null);
+    const [state, setState] = useState(null);
+    const [title, setTitle] = useState('');
+    const [text, settext] = useState('');
 
-    function handleOnClick(taskId) {
-        setEditingId(taskId)
-        console.log(taskId);
-    }
     return (
     <main className={styles.main}>
-        <h1 className={styles.mainTitle}>Your Tasks</h1>
-        <ul className={styles.tasks}>
+        
         {
-            list.map(value => {
-                return (
-                <li key={value.id} onClick={e => handleOnClick(value.id)} className={styles.task}>
-                    <h2 className={styles.title}>{value.title}</h2>
-                    <p className={styles.text}>{value.text}</p>
-                </li>
-                )
-                })
-            }
-        </ul>
-        { state == 'adding' ?
-            <Task state={state} setState={setState} id={id} setId={setId} /> : 
-            <button onClick={e => setState('adding')} className={styles.addButton}>Add</button> 
+            state === null ?
+            <>
+                <h1 className={styles.mainTitle}>Your Tasks</h1>
+                    <Tasks setState={setState} state={state} />
+            
+                <button onClick={e => setState('adding')} className={styles.addButton}>Add</button> 
+            </>
+            :
+            <div >
+                <div>
+                    <input type="text" placeholder="Title" onChange={e => setTitle(e.target.value)}/>
+                    <textarea type="text" placeholder="Text" onChange={(e => settext(e.target.value))}/>
+
+                    <button onClick={e => {
+                        setState(null);
+                        setId(id + 1);
+
+                        list.set(id, {
+                            id: id,
+                            title: title ? title : `Title ${id}`,
+                            text: text ? text : `Text ${id}`
+                        });
+                    }}>
+                        Add1
+                    </button>
+                </div>
+            </div>
         }
     </main>
   )
