@@ -17,19 +17,24 @@
 
     width: fit-content;
 }
-.tasks {
+
+.masonry_tasks {
     display: flex;
-    flex-direction: column;
-    
-    position: relative;
+    /*width: calc(100% + 30px); */
+
+    border: 1px solid red;
+
 }
 
-.tasks .disabled {
+.masonry_tasks .disabled {
     display: none;
 }
 
-.tasks .list {
+.masonry_tasks .list {
+
     display: flex;
+
+    border: 5px solid red;
 }
 
 .task {
@@ -43,6 +48,22 @@
     color: rgb(216, 216, 216);
 
     border-radius: 10px;
+
+    width: 95%;
+
+    word-wrap: break-word;
+
+    transition: all 0.2s;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 5px rgb(216, 216, 216);
+    cursor: pointer;
+}
+
+.text {
+    overflow-wrap: break-word;
 }
 
 .addButton {
@@ -60,4 +81,10 @@
     border-radius: 20px;
     border: none;
 
+    transition: all 0.2s;
+
+}
+
+.addButton:hover {
+    transform: scale(1.1);
 }

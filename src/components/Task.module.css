@@ -1,0 +1,36 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    width: calc(100vw + 30px);
+    height: calc(100vh + 30px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(85, 85, 85, 0.645)
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 25%;
+    left: 35%;
+
+    width: 30vw;
+    height: 50vh;
+
+}
+
+.textArea {
+    border: none;
+    resize: none;
+
+    
+}

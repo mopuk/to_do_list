@@ -10,19 +10,12 @@ import styles from './App.module.css';
 
 function App() {
 
-    const [id, setId] = useState(1);
     const [state, setState] = useState(null);
-    
 
+    
     return (
         <main className={styles.main}>
-            
-            {
-                state === null ?
-                    <Tasks state={state} setState={setState} />
-                :
-                    <Task id={id} setId={setId} setState={setState} />
-            }
+            <Tasks state={state} setState={setState}/>
         </main>
     )
 }
